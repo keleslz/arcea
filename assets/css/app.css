@@ -1,3 +1,40 @@
+main {
+  background-color: #f00;
+  width: calc(100% - 200px);
+  height: 100vh;
+}
 
+nav {
+  width: 200px;
+  background-color: #ccc;
+  min-height: 100vh;
+  padding: 0 5px 0 5px;
+}
+nav ul li {
+  display: flex;
+  justify-content: center;
+}
+nav ul .head {
+  background-color: #ccc;
+  color: #333;
+  text-align: center;
+}
+
+body {
+  margin: 0;
+}
+body .container {
+  display: flex;
+}
+body h2 {
+  text-align: center;
+  margin: 0;
+}
+body ul {
+  padding: 0;
+}
+body ul li {
+  list-style-type: none;
+}
 
 /*# sourceMappingURL=app.css.map */
