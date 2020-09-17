@@ -1,1 +1,14 @@
+Prochainement : 
 
+    REACT JS : 
+ 
+        - Generation de mini-carré le nombre se fixera par rapoort a la hauteur et la largeur du plus grand 
+        ecran pour la gestion du drag & drop aimant.
+        Losqu'un élement est placé on lui attribue une zone pour le responsive.
+        - Generation d'un element HTML lors de la selection d'option.
+        - Redimmensionnement de chaque element manuellement.
+        - Possibilité de place un element plus en avant qu'un autre avec
+        un systeme de z-index .
+
+
+    
