@@ -1,7 +1,9 @@
 nav {
     width: 200px;
-    background-color: #ccc;
-    min-height: 100vh ;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 98vh ;
     padding: 0 5px 0 5px;
 
     ul {

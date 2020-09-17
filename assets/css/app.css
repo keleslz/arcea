@@ -1,13 +1,19 @@
 main {
-  background-color: #f00;
   width: calc(100% - 200px);
   height: 100vh;
+  padding: 0 5px 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 98vh;
+  margin-left: 5px;
 }
 
 nav {
   width: 200px;
-  background-color: #ccc;
-  min-height: 100vh;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 98vh;
   padding: 0 5px 0 5px;
 }
 nav ul li {
@@ -21,10 +27,14 @@ nav ul .head {
 }
 
 body {
+  overflow-y: hidden;
   margin: 0;
 }
 body .container {
   display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  height: 100vh;
 }
 body h2 {
   text-align: center;
