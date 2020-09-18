@@ -11,4 +11,10 @@ import '../css/app.css';
 // Need jQuery? Install it with "yarn add jquery", then uncomment to import it.
 // import $ from 'jquery';
 
+
+import {Grid} from './lib/Grid.jsx';
+import {HelloMessage} from './lib/HelloMessage.jsx';
+
+new Grid();
+new HelloMessage();
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

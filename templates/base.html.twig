@@ -16,8 +16,8 @@
                     <h2>Menu</h2>
                     <ul>
                         <li>
-                            <select name="type" id="select-type">
-                                <option value="">Type d'element HTML</option>
+                            <select name="type" id="select-type" placeholder="Element HTML">
+                                <option value="">Element HTML</option>
 
                                 <option class="head" value="">Inline</option>
                                 
@@ -72,6 +72,8 @@
                 </main>
            </div>
         {% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
     </body>
 </html>
