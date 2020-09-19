@@ -1,8 +1,12 @@
 main {
     width: calc(100% - 200px);
-    padding: 0 5px 0 5px;
     border: 1px solid #ccc;
     border-radius: 10px;
     height: 98vh ;
     margin-left: 5px;
+    padding: 0 5px 0 5px ;
+    display : flex;
+    flex-wrap : wrap;
+    overflow : hidden;
+    justify-content: center;
 }
