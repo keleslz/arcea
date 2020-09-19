@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>{% block title %}Arcea{% endblock %}</title>
+        {% block stylesheets %}
+            {{ encore_entry_link_tags('app') }}
+        {% endblock %}
+    </head>
+    <body>
+        {% block body %}
+           <div class="container">
+                
+                {% block nav %}
+                <nav class="menu">
+                    <h2>Menu</h2>
+                    <ul>
+                        <li>
+                            <select name="type" id="select-type" placeholder="Element HTML">
+                                <option value="">Element HTML</option>
+
+                                <option class="head" value="">Inline</option>
+                                
+                                <option value="span">span</option>
+                                <option value="em">em</option>
+                                <option value="strong">strong</option>
+                                <option value="a">a</option>
+                                <option value="q">q</option>
+                                <option value="small">small</option>
+                                <option value="textarea">textarea</option>
+                                <option value="label">label</option>
+                                <option value="input">input</option>
+                                <option value="select">select</option>
+
+                                <option class="head" value="">Block</option>
+                                
+                                <option value="address">address</option>
+                                <option value="article">article</option>
+                                <option value="blockquote">blockquote</option>
+                                <option value="details">details</option>
+                                <option value="dialog">dialog</option>
+                                <option value="dd">dd</option>
+                                <option value="div">div</option>
+                                <option value="fieldset">fieldset</option>
+                                <option value="dt">dt</option>
+                                <option value="ul">ul</option>
+                                <option value="ol">ol</option>
+                                <option value="li">li</option>
+                                <option value="footer">footer</option>
+                                <option value="h1">h1</option>
+                                <option value="h2">h2</option>
+                                <option value="h3">h3</option>
+                                <option value="h4">h4</option>
+                                <option value="h5">h5</option>
+                                <option value="h6">h6</option>
+                                <option value="header">header</option>
+                                <option value="main">main</option>
+                                <option value="nav">nav</option>
+                                <option value="p">p</option>
+                                <option value="pre">pre</option>
+                                <option value="section">section</option>
+                                <option value="table">table</option>
+                            </select>
+                        </li>
+                    </ul>
+                </nav>
+                {% endblock %}
+                
+                <main>
+                {% block main %}
+                {% endblock %}
+                </main>
+           </div>
+        {% endblock %}
+        {% block javascripts %}
+            {{ encore_entry_script_tags('app') }}
+        {% endblock %}
+    </body>
+</html>

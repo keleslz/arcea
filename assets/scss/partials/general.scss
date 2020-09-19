@@ -1,0 +1,25 @@
+body {
+    
+    overflow-y: hidden;
+    margin: 0;
+
+    .container {
+        display: flex;
+        align-items: center;
+        padding: 0 10px 0 10px;
+        height: 100vh;
+    }    
+    
+    h2 {
+        text-align: center;
+        margin: 10px 0 10px 0;
+    }
+
+    ul {
+        padding: 0;
+
+        li {
+            list-style-type: none;
+        }
+    }
+}

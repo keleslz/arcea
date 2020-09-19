@@ -1,0 +1,31 @@
+nav {
+
+    width: 200px;
+    display: inline-block;
+    border: 1px solid #ccc;
+    border-radius: 10px;
+    height: 98vh ;
+    padding: 0 5px 0 5px;
+
+
+    ul {
+
+        li {
+            margin: auto;
+            display: flex;
+            justify-content: center;
+
+            select {
+                width: 150px;
+                margin-left: 1px;
+            }
+        }
+        
+        .head{
+
+            background-color:#ccc;
+            color:#333;
+            text-align: center;
+        }
+    }
+}

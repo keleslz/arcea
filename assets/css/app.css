@@ -1,0 +1,54 @@
+main {
+  width: calc(100% - 200px);
+  padding: 0 5px 0 5px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 98vh;
+  margin-left: 5px;
+}
+
+nav {
+  width: 200px;
+  display: inline-block;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  height: 98vh;
+  padding: 0 5px 0 5px;
+}
+nav ul li {
+  margin: auto;
+  display: flex;
+  justify-content: center;
+}
+nav ul li select {
+  width: 150px;
+  margin-left: 1px;
+}
+nav ul .head {
+  background-color: #ccc;
+  color: #333;
+  text-align: center;
+}
+
+body {
+  overflow-y: hidden;
+  margin: 0;
+}
+body .container {
+  display: flex;
+  align-items: center;
+  padding: 0 10px 0 10px;
+  height: 100vh;
+}
+body h2 {
+  text-align: center;
+  margin: 10px 0 10px 0;
+}
+body ul {
+  padding: 0;
+}
+body ul li {
+  list-style-type: none;
+}
+
+/*# sourceMappingURL=app.css.map */
