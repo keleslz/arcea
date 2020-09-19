@@ -22,4 +22,12 @@ body {
             list-style-type: none;
         }
     }
+
+    textarea{
+        padding: 0;
+    }
+    
+    .hidden {
+        display: none;
+    }
 }

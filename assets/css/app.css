@@ -1,6 +1,6 @@
 main {
   width: calc(100% - 200px);
-  border: 1px solid #ccc;
+  border: 0.5px solid #ccc;
   border-radius: 10px;
   height: 98vh;
   margin-left: 5px;
@@ -10,7 +10,6 @@ main {
   overflow: hidden;
   justify-content: center;
 }
-
 nav {
   width: 200px;
   display: inline-block;
@@ -53,6 +52,12 @@ body ul {
 }
 body ul li {
   list-style-type: none;
+}
+body textarea {
+  padding: 0;
+}
+body .hidden {
+  display: none;
 }
 
 /*# sourceMappingURL=app.css.map */

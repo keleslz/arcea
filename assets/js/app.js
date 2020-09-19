@@ -13,6 +13,8 @@ import '../css/app.css';
 
 
 import {Grid} from './lib/grid/Grid.js';
+import {Element} from './lib/element/Element.js';
 
 new Grid();
+new Element();
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
