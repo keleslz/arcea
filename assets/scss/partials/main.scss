@@ -1,8 +1,22 @@
 main {
     width: calc(100% - 200px);
-    padding: 0 5px 0 5px;
-    border: 1px solid #ccc;
+    border: 0.5px solid #ccc;
     border-radius: 10px;
     height: 98vh ;
     margin-left: 5px;
+    padding: 0 5px 0 5px ;
+    display : flex;
+    flex-wrap : wrap;
+    overflow : hidden;
+    justify-content: center;
+
+    #main-container {
+
+        // .focus {
+        //     display: inline-block !important;
+        //     border: 1px solid #333!important;
+        //     background-color: rgba(38, 135, 180, 0.377)!important;
+        //     border-radius : 1px!important;
+        // }
+    }
 }

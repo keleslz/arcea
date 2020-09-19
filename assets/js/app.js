@@ -12,9 +12,9 @@ import '../css/app.css';
 // import $ from 'jquery';
 
 
-import {Grid} from './lib/Grid.jsx';
-import {HelloMessage} from './lib/HelloMessage.jsx';
+import {Grid} from './lib/grid/Grid.js';
+import {Element} from './lib/element/Element.js';
 
 new Grid();
-new HelloMessage();
+new Element();
 console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

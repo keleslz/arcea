@@ -1,4 +1,10 @@
+Start : 
+        1- sass --watch
+        2- yarn install
+        3- yarn watch
+
 Prochainement : 
+
 
     REACT JS : 
  
