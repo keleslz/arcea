@@ -1,3 +1,5 @@
+import { elementType } from "prop-types";
+
 export class Grid 
 {
     constructor()
@@ -33,11 +35,14 @@ export class Grid
         const SQUAREPERROWX = Math.floor(size.width/SQUARESIZE);
         const SQUAREPERROWY = Math.floor(size.height/SQUARESIZE);
         const AIRMAIN = SQUAREPERROWX * SQUAREPERROWY;
+        const GRIDCONTAINER = document.createElement('div');
+        GRIDCONTAINER.id = 'grid-container';
+        this.main.appendChild(GRIDCONTAINER);
 
         for (let i = 0; i <  AIRMAIN ; i++) {
 
             let square = document.createElement('div');
-            this.main.appendChild(square);
+            GRIDCONTAINER.appendChild(square);
 
             square.style.display = 'inline-block';
             square.style.width = SQUARESIZE + 'px';
@@ -61,11 +66,18 @@ export class Grid
         div.style.width = this.main.getClientRects()[0].width + 'px';
         div.style.height = this.main.getClientRects()[0].height + 'px';
     }
-
+    
     init()
     {
         window.addEventListener('contextmenu', (e)=>{
             e.preventDefault();
         })
     }
+
+    
+    getPosition(element)
+    {
+        return (element.getClientRects()[0])
+    }
+
 }
