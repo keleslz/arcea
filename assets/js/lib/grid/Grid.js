@@ -5,7 +5,6 @@ export class Grid
 {
     constructor()
     {
-        // this.init();
         this.main = document.querySelector('.container main')
         this.lineSize = 10; 
         this.mainSize = this.size(this.main);
@@ -35,7 +34,6 @@ export class Grid
         const LINESIZE = this.lineSize;
         const LINEPERROWX = Math.floor(size.width/LINESIZE);
         const LINEPERROWY = Math.floor(size.height/LINESIZE);
-        const AIRMAIN = LINEPERROWX * LINEPERROWY;
         
         const GRIDCONTAINER = document.createElement('div');
         const VERTICALCONTAINER = document.createElement('div');
@@ -107,15 +105,7 @@ export class Grid
         div.style.width = this.main.getClientRects()[0].width + 'px';
         div.style.height = this.main.getClientRects()[0].height + 'px';
     }
-    
-    init()
-    {
-        window.addEventListener('contextmenu', (e)=>{
-            e.preventDefault();
-        })
-    }
 
-    
     getPosition(element)
     {
         return (element.getClientRects()[0])

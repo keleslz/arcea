@@ -6,10 +6,17 @@ main {
     margin-left: 5px;
     overflow : hidden;
 
+    .draggable {
+        touch-action: none;
+        user-select: none;
+    }
+      
     #main-container {
         
-        .element {
+        overflow: hidden;
 
+        .element {
+            
             &:hover {
                 cursor: pointer;
             }
@@ -41,9 +48,7 @@ main {
                 position : absolute;
                 // border : 1px solid #eee;
                 width : 100%;
-        
             }
         }
     }
-
 }

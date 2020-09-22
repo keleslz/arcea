@@ -19,5 +19,3 @@ import { Move } from './lib/grid/Move';
 new Grid();
 new Element();
 new Move();
-
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');

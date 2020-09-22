@@ -25,7 +25,6 @@ export class Element {
         element.textContent = 'Nouvel element';
     }
 
-
     /**
      * Create an HTML element when one element in the menu list was selected
      */
@@ -38,7 +37,7 @@ export class Element {
                 if(e.target.value !== '' )
                 {
                     let element = document.createElement('input');
-                    element.classList.add('element' , e.target.value);
+                    element.classList.add('element' , e.target.value, 'draggable');
                     this.container.appendChild(element);
                     element.value = 'Nouveau texte';
                     this.center(element);   
@@ -46,7 +45,7 @@ export class Element {
             })   
         });
     }
-    
+
     /**
      * Get an html element and returs his location
      * @param {HTMLElement} element 
