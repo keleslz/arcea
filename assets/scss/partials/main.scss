@@ -1,22 +1,49 @@
 main {
+
     width: calc(100% - 200px);
     border: 0.5px solid #ccc;
-    border-radius: 10px;
     height: 98vh ;
     margin-left: 5px;
-    padding: 0 5px 0 5px ;
-    display : flex;
-    flex-wrap : wrap;
     overflow : hidden;
-    justify-content: center;
 
     #main-container {
+        
+        .element {
 
-        // .focus {
-        //     display: inline-block !important;
-        //     border: 1px solid #333!important;
-        //     background-color: rgba(38, 135, 180, 0.377)!important;
-        //     border-radius : 1px!important;
-        // }
+            &:hover {
+                cursor: pointer;
+            }
+        }
     }
+
+    #grid-container {
+
+        height: 100%;
+        border: 1px solid #ccc;
+
+        #line-vertical-container, #line-horizontal-container{
+            height: 100%;
+            width: 100%;
+        }
+
+        #line-vertical-container {
+    
+            .grid-vertical-line{
+                position : absolute;
+                // border : 1px solid #eee;
+                height : 100vh;
+            }
+        }
+
+        #line-horizontal-container {
+           
+            .grid-horizontal-line{
+                position : absolute;
+                // border : 1px solid #eee;
+                width : 100%;
+        
+            }
+        }
+    }
+
 }

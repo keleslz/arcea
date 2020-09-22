@@ -1,15 +1,30 @@
 main {
   width: calc(100% - 200px);
   border: 0.5px solid #ccc;
-  border-radius: 10px;
   height: 98vh;
   margin-left: 5px;
-  padding: 0 5px 0 5px;
-  display: flex;
-  flex-wrap: wrap;
   overflow: hidden;
-  justify-content: center;
 }
+main #main-container .element:hover {
+  cursor: pointer;
+}
+main #grid-container {
+  height: 100%;
+  border: 1px solid #ccc;
+}
+main #grid-container #line-vertical-container, main #grid-container #line-horizontal-container {
+  height: 100%;
+  width: 100%;
+}
+main #grid-container #line-vertical-container .grid-vertical-line {
+  position: absolute;
+  height: 100vh;
+}
+main #grid-container #line-horizontal-container .grid-horizontal-line {
+  position: absolute;
+  width: 100%;
+}
+
 nav {
   width: 200px;
   display: inline-block;

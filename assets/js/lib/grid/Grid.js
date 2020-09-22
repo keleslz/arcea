@@ -1,10 +1,13 @@
+/**
+ * @class
+ */
 export class Grid 
 {
     constructor()
     {
-        this.init();
+        // this.init();
         this.main = document.querySelector('.container main')
-        this.squareSize = 10; 
+        this.lineSize = 10; 
         this.mainSize = this.size(this.main);
         this.elementContainer()
         this.create(this.mainSize);
@@ -24,26 +27,69 @@ export class Grid
     }
 
     /**
-     * Create grid
+     * Create grid with several line
      * @param {number} size 
      */
     create(size)
     {
-        const SQUARESIZE = this.squareSize;
-        const SQUAREPERROWX = Math.floor(size.width/SQUARESIZE);
-        const SQUAREPERROWY = Math.floor(size.height/SQUARESIZE);
-        const AIRMAIN = SQUAREPERROWX * SQUAREPERROWY;
+        const LINESIZE = this.lineSize;
+        const LINEPERROWX = Math.floor(size.width/LINESIZE);
+        const LINEPERROWY = Math.floor(size.height/LINESIZE);
+        const AIRMAIN = LINEPERROWX * LINEPERROWY;
+        
+        const GRIDCONTAINER = document.createElement('div');
+        const VERTICALCONTAINER = document.createElement('div');
+        const HORIZONTALCONTAINER = document.createElement('div');
+        
+        GRIDCONTAINER.id = 'grid-container';
+        VERTICALCONTAINER.id = 'line-vertical-container';
+        HORIZONTALCONTAINER.id = 'line-horizontal-container';
+        
+        this.main.appendChild(GRIDCONTAINER);
 
-        for (let i = 0; i <  AIRMAIN ; i++) {
+        GRIDCONTAINER.appendChild(VERTICALCONTAINER);
+        GRIDCONTAINER.appendChild(HORIZONTALCONTAINER);
 
-            let square = document.createElement('div');
-            this.main.appendChild(square);
+        for (let i = 0; i <  LINEPERROWX  ; i++) {
 
-            square.style.display = 'inline-block';
-            square.style.width = SQUARESIZE + 'px';
-            square.style.height = SQUARESIZE + 'px';
-            square.style.border = '1px solid #ccc';
+            const LINE = document.createElement('div');
+            LINE.classList.add('grid-vertical-line');
+            this.vertical(VERTICALCONTAINER, LINE , i);
         }
+
+        for (let i = 0; i <  LINEPERROWY  ; i++) {
+
+            const LINE = document.createElement('div');
+            LINE.classList.add('grid-horizontal-line');
+            this.horizontal(HORIZONTALCONTAINER, LINE , i);
+        }
+    }
+
+    /**
+     * Create vertical line
+     * @param {HTMLElement} gridContainer 
+     * @param {HTMLElement} element 
+     * @param {Nmber} i 
+     */
+    vertical (gridContainer, element, i)
+    {   
+        gridContainer.appendChild(element);
+        
+        element.style.left = this.squareSize + 'px';
+        element.style.marginLeft = (i * this.lineSize) + 'px';
+    }
+
+    /**
+     * Create horizontal line
+     * @param {HTMLELement} gridContainer 
+     * @param {HTMLElement} element 
+     * @param {Number} i 
+     */
+    horizontal (gridContainer, element,i)
+    {
+        gridContainer.appendChild(element);
+        
+        element.style.top = (i * this.lineSize) + 'px';
     }
 
     /**
@@ -61,11 +107,18 @@ export class Grid
         div.style.width = this.main.getClientRects()[0].width + 'px';
         div.style.height = this.main.getClientRects()[0].height + 'px';
     }
-
+    
     init()
     {
         window.addEventListener('contextmenu', (e)=>{
             e.preventDefault();
         })
     }
+
+    
+    getPosition(element)
+    {
+        return (element.getClientRects()[0])
+    }
+
 }
