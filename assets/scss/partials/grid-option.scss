@@ -1,0 +1,26 @@
+#option-menu {
+
+    font-size: 15px;
+    position: absolute;
+    z-index: 1000;
+    margin: 0;
+    padding: 0;
+    border-left: 1px solid;
+    border-right: 1px solid;
+    border-bottom: 1px solid;
+    background-color: #fff!important;
+    cursor: pointer;
+
+    li{
+        
+        border-top: 1px solid;
+        list-style-type: none;
+        padding: 5px;
+        
+        &:hover{
+            color: #ccc;
+            background-color: #333;
+            transition: .2s ease-in .1s;
+        }
+    }
+}

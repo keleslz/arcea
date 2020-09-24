@@ -1,3 +1,6 @@
+/**
+ * @class create html element
+ */
 export class Element {
     
     constructor()
@@ -20,11 +23,11 @@ export class Element {
         let heightContainer = posContainer.height;
 
         element.style.position = 'absolute';
-        element.style.top = heightContainer / 2 + 'px';
-        element.style.left = leftContainer +  'px';
+        // element.style.top = heightContainer / 2 + 'px';
+        // element.style.left = leftContainer +  'px';
+
         element.textContent = 'Nouvel element';
     }
-
 
     /**
      * Create an HTML element when one element in the menu list was selected
@@ -46,7 +49,7 @@ export class Element {
             })   
         });
     }
-    
+
     /**
      * Get an html element and returs his location
      * @param {HTMLElement} element 

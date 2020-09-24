@@ -14,10 +14,10 @@ import '../css/app.css';
 
 import { Grid } from './lib/grid/Grid.js';
 import { Element } from './lib/element/Element.js';
-import { Move } from './lib/grid/Move';
+import { Move } from './lib/grid/Move.js';
+import { Action } from './lib/option/Action.js';
 
 new Grid();
 new Element();
 new Move();
-
-console.log('Hello Webpack Encore! Edit me in assets/js/app.js');
+new Action();
