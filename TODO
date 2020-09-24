@@ -3,6 +3,11 @@ Start :
         2- yarn install
         3- yarn watch
 
+Ajouter '.target' lorsque option est ouvert sur l'element cible
+retirer '.target'  di l'option n'est plus actif
+
+Objectif : ajouter une action a un element lqui a target seulement
+
 Prochainement : 
 
 

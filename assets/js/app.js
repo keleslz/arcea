@@ -14,10 +14,10 @@ import '../css/app.css';
 
 import { Grid } from './lib/grid/Grid.js';
 import { Element } from './lib/element/Element.js';
-import { Move } from './lib/grid/Move';
-import { Menu } from './lib/option/Menu.js';
+import { Move } from './lib/grid/Move.js';
+import { Action } from './lib/option/Action.js';
 
 new Grid();
 new Element();
 new Move();
-new Menu();
+new Action();

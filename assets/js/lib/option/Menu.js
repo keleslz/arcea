@@ -91,6 +91,7 @@ export class Menu {
                         if(e.target.classList.contains('element'))
                         {
                             this.openOrClose(this.menu);
+                            e.target.classList.add('target')
                         }
                     });
                 });
@@ -102,7 +103,18 @@ export class Menu {
             // && this.menu.classList.contains('element')
             if(!e.target.classList.contains('element') )
             {
-                this.menu.classList.add('hidden')
+                this.menu.classList.add('hidden');
+
+           /*      
+                
+                let target = document.querySelector('.target');
+                console.log(target);
+                
+                if(target)
+                {
+                    console.log(e)
+                    e.classList.remove('target')
+                } */
             }
         });
 
