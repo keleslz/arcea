@@ -1,3 +1,6 @@
+/**
+ * @class create html element
+ */
 export class Element {
     
     constructor()
@@ -20,8 +23,9 @@ export class Element {
         let heightContainer = posContainer.height;
 
         element.style.position = 'absolute';
-        element.style.top = heightContainer / 2 + 'px';
-        element.style.left = leftContainer +  'px';
+        // element.style.top = heightContainer / 2 + 'px';
+        // element.style.left = leftContainer +  'px';
+
         element.textContent = 'Nouvel element';
     }
 
@@ -37,7 +41,7 @@ export class Element {
                 if(e.target.value !== '' )
                 {
                     let element = document.createElement('input');
-                    element.classList.add('element' , e.target.value, 'draggable');
+                    element.classList.add('element' , e.target.value);
                     this.container.appendChild(element);
                     element.value = 'Nouveau texte';
                     this.center(element);   

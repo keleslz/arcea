@@ -1,5 +1,5 @@
 /**
- * @class
+ * @class create a grid system
  */
 export class Grid 
 {
@@ -65,6 +65,7 @@ export class Grid
 
     /**
      * Create vertical line
+     * 
      * @param {HTMLElement} gridContainer 
      * @param {HTMLElement} element 
      * @param {Nmber} i 
@@ -79,6 +80,7 @@ export class Grid
 
     /**
      * Create horizontal line
+     * 
      * @param {HTMLELement} gridContainer 
      * @param {HTMLElement} element 
      * @param {Number} i 
@@ -99,11 +101,11 @@ export class Grid
         div.id = 'main-container';
         this.main.appendChild(div);
 
-        div.style.position = 'absolute';
-        div.style.top = this.main.getClientRects()[0].top + 'px';
-        div.style.left = this.main.getClientRects()[0].left + 'px';
-        div.style.width = this.main.getClientRects()[0].width + 'px';
-        div.style.height = this.main.getClientRects()[0].height + 'px';
+        // div.style.position = 'absolute';
+        // div.style.top = this.main.getClientRects()[0].top + 'px';
+        // div.style.left = this.main.getClientRects()[0].left + 'px';
+        // div.style.width = this.main.getClientRects()[0].width + 'px';
+        // div.style.height = this.main.getClientRects()[0].height + 'px';
     }
 
     getPosition(element)

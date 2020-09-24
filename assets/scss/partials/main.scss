@@ -1,6 +1,9 @@
 main {
 
-    width: calc(100% - 200px);
+    position: absolute;
+    top: 8px;
+    left:225px;
+    width: calc(100% - 240px);
     border: 0.5px solid #ccc;
     height: 98vh ;
     margin-left: 5px;
@@ -17,6 +20,12 @@ main {
 
         .element {
             
+            z-index: 2;
+            border: 1px solid #ccc;
+            border-radius : 2px;
+            left: calc(50% - 112.5px);
+            top: 50%;
+            
             &:hover {
                 cursor: pointer;
             }
@@ -27,17 +36,18 @@ main {
 
         height: 100%;
         border: 1px solid #ccc;
-
+        z-index: -1;
+        
         #line-vertical-container, #line-horizontal-container{
             height: 100%;
             width: 100%;
         }
 
         #line-vertical-container {
-    
+            
             .grid-vertical-line{
                 position : absolute;
-                // border : 1px solid #eee;
+                border : 1px solid #eee;
                 height : 100vh;
             }
         }
@@ -46,7 +56,7 @@ main {
            
             .grid-horizontal-line{
                 position : absolute;
-                // border : 1px solid #eee;
+                border : 1px solid #eee;
                 width : 100%;
             }
         }
