@@ -1,60 +1,73 @@
 import { Menu } from "./Menu";
 
+/**
+ * @class contains all element event when right click 
+ */
 export class Action extends Menu
 {
     constructor()
     {   
         super();
         this.menu = document.querySelector('#option-menu');
-        this.set();
+        let optionListName = this.name();
+        this.type(optionListName);
     }
 
-    set()
+    /**
+     * 
+     * @param {Array} optionListName An array with option menu list
+     */
+    type(optionListName)
     {   
-        this.menu.children.forEach( child => {
+        for (let i = 0; i < optionListName ; i++) {
             
-            child.addEventListener('click',(e)=>{
-                // console.log(e)
-            })
-        });
-    }
-
-    rule(element, e)
-    {
-        switch (element.id) {
-            case 'option-menu-move':
-                this.move(element, e)
-                break;
-            case 'option-menu-remove':
-                this.remove('remove')
-                break;
-            case 'option-menu-resize':
-                this.resize('resize')
-                break;
-            default:
-                break;
-        }
-    }
+            let child = optionListName[i];
+            
+            this.menu.children.forEach( child => {
+            
+                child.addEventListener('click',(e)=>{
     
-    move(element, e)
-    {
-
+                    let target = e.target;
+                    let classTargetElement = document.querySelector('.target');
+    
+                    if(target.innerHTML === 'deplacer')
+                    {
+                        if(classTargetElement)
+                        {
+                            classTargetElement.classList.add('draggable');
+                        }
+                    }
+                    
+                    if(target.innerHTML === 'modifier la taille')
+                    {
+                        if(classTargetElement)
+                        {
+                            classTargetElement.classList.add(child.innerHTML);
+                        }
+                    }
+                })
+            });
+        }
+        
     }
 
-    // resize(element)
-    // {  
-    //     if(element.classList.contains())
-    //     {
+    /**
+     * Set an array list of menu option item
+     * @param {Array} optionListName An array with option menu list
+     * @returns {Array}
+     */
+    name()
+    {
+        let ids = [];
 
-    //     }
-    // }
+        for (let i = 0; i < this.menu.childElementCount ; i++) 
+        {   
+            let child = this.menu.children[i];
+            let word = child.id.replace('option-menu-','');
+            ids.push(word);
+        }
 
-    // remove(element)
-    // {
-    //     if(element.classList.contains())
-    //     {
-
-    //     }
-    // }
+        return word
+    }
 
 }

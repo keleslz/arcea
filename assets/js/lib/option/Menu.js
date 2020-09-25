@@ -1,5 +1,5 @@
 /**
- * @class right click option in the grid 
+ * @class menu option action , position and event 
  */
 export class Menu {
 
@@ -17,6 +17,7 @@ export class Menu {
 
     /**
      * unhauthorize basic behvior right click 
+     * @returns {void}
      */
     unauthorizeRightClick()
     {
@@ -25,6 +26,7 @@ export class Menu {
 
     /**
      * create option menu
+     * @returns {HTMLElement} ul
      */
     create()
     {
@@ -53,6 +55,7 @@ export class Menu {
     /**
      * Html element to open
      * @param {HTMLElement} menu 
+     * @returns {void}
      */
     openOrClose(menu)
     {   
@@ -66,6 +69,7 @@ export class Menu {
 
     /**
      * option list of element option
+     * @returns {void}
      */
     optionList ()
     {
@@ -77,6 +81,7 @@ export class Menu {
 
     /**
      * open or close option element when user click with multi event
+     * @returns {void}
      */
     optionOnElement()
     {
@@ -131,6 +136,7 @@ export class Menu {
     /**
      * Listen current mouse position return them 
      * @returns {object} number position
+     * @returns {void}
      */
     mousePosition()
     {   
@@ -159,6 +165,7 @@ export class Menu {
 
     /**
      * element active or not when right click
+     * @returns {void}
      */
     activeElement()
     {
@@ -177,7 +184,6 @@ export class Menu {
                 {
                     targetClass.classList.remove('target');
                 }
-                console.log('remove target')
             }else {
                 target.classList.remove('target');
             }
@@ -198,7 +204,6 @@ export class Menu {
                 {
                     targetClass.classList.remove('target');
                 }
-                console.log('remove target')
             }else {
                 target.classList.remove('target');
             }
