@@ -12,8 +12,12 @@ export class Menu {
         this.menu = this.create();
         this.mousePosition();
         this.optionOnElement();
+        this.activeElement();
     }
 
+    /**
+     * unhauthorize basic behvior right click 
+     */
     unauthorizeRightClick()
     {
         window.addEventListener('contextmenu',(e) => e.preventDefault());
@@ -76,22 +80,21 @@ export class Menu {
      */
     optionOnElement()
     {
-        let itemList = document.querySelectorAll('#select-type option');
+        let optionList = document.querySelectorAll('#select-type option');
 
-        itemList.forEach( item => {
+        optionList.forEach( option => {
 
-            item.addEventListener('click', (e)=> {
+            option.addEventListener('click', (e)=> {
 
                 let list = document.querySelectorAll('#main-container .element');
                 
                 list.forEach( elt => {
-                    
+
                     elt.addEventListener('contextmenu',(e)=> {
                         
                         if(e.target.classList.contains('element'))
                         {
                             this.openOrClose(this.menu);
-                            e.target.classList.add('target')
                         }
                     });
                 });
@@ -100,23 +103,20 @@ export class Menu {
 
         window.addEventListener('contextmenu', (e)=>{
 
-            // && this.menu.classList.contains('element')
             if(!e.target.classList.contains('element') )
             {
                 this.menu.classList.add('hidden');
-
-           /*      
-                
-                let target = document.querySelector('.target');
-                console.log(target);
-                
-                if(target)
-                {
-                    console.log(e)
-                    e.classList.remove('target')
-                } */
             }
         });
+
+        window.addEventListener('click',(e)=>{
+            
+            if(e.target.classList.contains('element') && !this.menu.classList.contains('hidden'))
+            {
+                this.menu.classList.add('hidden');
+            }
+        });
+
 
         window.addEventListener('click', (e)=>{
 
@@ -125,6 +125,7 @@ export class Menu {
                 this.menu.classList.add('hidden')
             }
         });
+
     }
 
     /**
@@ -154,5 +155,53 @@ export class Menu {
     getPosition(element)
     {   
         return (element.getClientRects()[0])
+    }
+
+    /**
+     * element active or not when right click
+     */
+    activeElement()
+    {
+        window.addEventListener('contextmenu', (e)=>{
+
+            let target = e.target;
+            let targetClass = document.querySelector('.target');
+
+            if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
+            {   
+                target.classList.add('target');
+
+            }else if( !target.classList.contains('element') )
+            {
+                if(targetClass)
+                {
+                    targetClass.classList.remove('target');
+                }
+                console.log('remove target')
+            }else {
+                target.classList.remove('target');
+            }
+        });
+
+        window.addEventListener('click', (e)=>{
+
+            let target = e.target;
+            let targetClass = document.querySelector('.target');
+
+            if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
+            {   
+                target.classList.add('target');
+
+            }else if( !target.classList.contains('element') )
+            {
+                if(targetClass)
+                {
+                    targetClass.classList.remove('target');
+                }
+                console.log('remove target')
+            }else {
+                target.classList.remove('target');
+            }
+        });
     }
 }

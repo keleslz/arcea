@@ -14,7 +14,7 @@ export class Action extends Menu
         this.menu.children.forEach( child => {
             
             child.addEventListener('click',(e)=>{
-                console.log(e)
+                // console.log(e)
             })
         });
     }

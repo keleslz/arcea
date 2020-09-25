@@ -84,7 +84,7 @@ export class Move {
                 target.setAttribute('data-y', y)
                 target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
 
-                console.log(target)
+                // console.log(target)
             }
         },
         modifiers: [
@@ -101,16 +101,16 @@ export class Move {
 
         inertia: true
     })
-    .draggable({
-        listeners: { move: window.dragMoveListener },
-        inertia: true,
-        modifiers: [
-            interact.modifiers.restrictRect({
-                restriction: 'parent',
-                endOnly: true
-            })
-        ]
-    })
+        .draggable({
+            listeners: { move: window.dragMoveListener },
+            inertia: true,
+            modifiers: [
+                interact.modifiers.restrictRect({
+                    restriction: 'parent',
+                    endOnly: true
+                })
+            ]
+        })
     }
 }
 
