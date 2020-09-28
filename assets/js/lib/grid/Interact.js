@@ -3,7 +3,7 @@ import interact from 'interactjs'
 /**
  * @class allows to move an item on the grid
  */
-export class Move {
+export class Interact {
 
     constructor(){
         this.interact = interact;
@@ -58,7 +58,7 @@ export class Move {
      */
     resizable()
     {
-        interact('.resize-drag').resizable({
+        interact('.resize').resizable({
 
         // resize from all edges and corners
         edges: { left: true, right: true, bottom: true, top: true },

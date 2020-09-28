@@ -75,7 +75,11 @@ export class Menu {
     {
         return {
             fr : ['deplacer', 'supprimer', 'modifier la taille'], 
-            en  : ['move','remove','resize']
+            en  : ['move','remove','resize'],
+            className : {
+                drag : 'draggable',
+                resize : 'resize'
+            }
         }
     }
 

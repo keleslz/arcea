@@ -8,47 +8,85 @@ export class Action extends Menu
     constructor()
     {   
         super();
+        this.options = this.optionList().className;
         this.menu = document.querySelector('#option-menu');
         let optionListName = this.name();
         this.type(optionListName);
     }
 
     /**
-     * 
+     * Define a class according to the chosen option
      * @param {Array} optionListName An array with option menu list
      */
     type(optionListName)
     {   
-        for (let i = 0; i < optionListName ; i++) {
-            
-            let child = optionListName[i];
+        let option = optionListName;
+
+        for (let i = 0; i < optionListName.length ; i++) {
             
             this.menu.children.forEach( child => {
-            
+
                 child.addEventListener('click',(e)=>{
-    
+
                     let target = e.target;
                     let classTargetElement = document.querySelector('.target');
-    
-                    if(target.innerHTML === 'deplacer')
-                    {
-                        if(classTargetElement)
-                        {
-                            classTargetElement.classList.add('draggable');
-                        }
-                    }
-                    
-                    if(target.innerHTML === 'modifier la taille')
-                    {
-                        if(classTargetElement)
-                        {
-                            classTargetElement.classList.add(child.innerHTML);
-                        }
-                    }
+
+                    this.possible(target, classTargetElement);
                 })
             });
         }
         
+    }
+
+    /**
+     * Possible action list 
+     * @param {HTMLElement} target e.target
+     * @param {HTMLElement} classTargetElement 
+     */
+    possible(target, classTargetElement)
+    {   
+        // MOVE className
+        if(target.innerHTML === 'deplacer' )
+        {   
+            if(classTargetElement)
+            {
+                this.stopEvent(classTargetElement, this.options.drag);
+                classTargetElement.classList.add(this.options.drag);
+            }
+        }
+        
+        // REMOVE className          
+        if(target.innerHTML === 'supprimer')
+        {
+            if(classTargetElement)
+            {
+                classTargetElement.remove();
+            }
+        }
+
+        //RESIZE className
+        if(target.innerHTML === 'modifier la taille')
+        {
+            if(classTargetElement)
+            {
+                this.stopEvent(classTargetElement, this.options.resize);
+                classTargetElement.classList.add(this.options.resize);
+            }
+        }
+    }
+    
+    /**
+     * Stop current action
+     * @param {HTMLElement} classTargetElement
+     * @param {String} className
+     */
+    stopEvent(classTargetElement, className)
+    {   
+        classTargetElement.addEventListener('mouseup',(e)=>{
+           
+            e.target.classList.remove(className);
+            this.removeAll(e.target);
+        })
     }
 
     /**
@@ -66,8 +104,26 @@ export class Action extends Menu
             let word = child.id.replace('option-menu-','');
             ids.push(word);
         }
-
-        return word
+        return ids
     }
 
+    /**
+     * Remove all action
+     * @param {HTMLElement} target
+     */
+    removeAll(target)
+    {
+        for (const key in this.options ) {
+
+            if (this.options.hasOwnProperty(key)) {
+                
+                const option = this.options[key];
+
+                if(target.classList.contains(option))
+                {
+                    target.classList.remove(option);
+                }
+            }
+        }
+    }
 }

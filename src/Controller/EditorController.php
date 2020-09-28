@@ -5,15 +5,15 @@ namespace App\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\Routing\Annotation\Route;
 
-class ElementController extends AbstractController
+class EditorController extends AbstractController
 {
     /**
-     * @Route("/element", name="element")
+     * @Route("/editor", name="editor")
      */
     public function index()
     {
-        return $this->render('element/index.html.twig', [
-            'controller_name' => 'ElementController',
+        return $this->render('editor/edit.html.twig', [
+            'controller_name' => 'EditorController',
         ]);
     }
 }
