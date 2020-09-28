@@ -3,7 +3,7 @@ import interact from 'interactjs'
 /**
  * @class allows to move an item on the grid
  */
-export class Move {
+export class Interact {
 
     constructor(){
         this.interact = interact;
@@ -58,7 +58,7 @@ export class Move {
      */
     resizable()
     {
-        interact('.resize-drag').resizable({
+        interact('.resize').resizable({
 
         // resize from all edges and corners
         edges: { left: true, right: true, bottom: true, top: true },
@@ -84,7 +84,7 @@ export class Move {
                 target.setAttribute('data-y', y)
                 target.textContent = Math.round(event.rect.width) + '\u00D7' + Math.round(event.rect.height)
 
-                console.log(target)
+                // console.log(target)
             }
         },
         modifiers: [
@@ -101,16 +101,16 @@ export class Move {
 
         inertia: true
     })
-    .draggable({
-        listeners: { move: window.dragMoveListener },
-        inertia: true,
-        modifiers: [
-            interact.modifiers.restrictRect({
-                restriction: 'parent',
-                endOnly: true
-            })
-        ]
-    })
+        .draggable({
+            listeners: { move: window.dragMoveListener },
+            inertia: true,
+            modifiers: [
+                interact.modifiers.restrictRect({
+                    restriction: 'parent',
+                    endOnly: true
+                })
+            ]
+        })
     }
 }
 

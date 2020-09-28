@@ -164,5 +164,8 @@ body .resize-drag {
   /* This makes things *much* easier */
   box-sizing: border-box;
 }
+body .target {
+  box-shadow: 0 0 10px #ccc !important;
+}
 
 /*# sourceMappingURL=app.css.map */

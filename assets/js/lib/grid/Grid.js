@@ -100,14 +100,12 @@ export class Grid
         let div = document.createElement('div');
         div.id = 'main-container';
         this.main.appendChild(div);
-
-        // div.style.position = 'absolute';
-        // div.style.top = this.main.getClientRects()[0].top + 'px';
-        // div.style.left = this.main.getClientRects()[0].left + 'px';
-        // div.style.width = this.main.getClientRects()[0].width + 'px';
-        // div.style.height = this.main.getClientRects()[0].height + 'px';
     }
 
+    /**
+     * Get an element position
+     * @param {HTMLElement} element 
+     */
     getPosition(element)
     {
         return (element.getClientRects()[0])

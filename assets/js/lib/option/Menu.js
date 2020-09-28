@@ -1,5 +1,5 @@
 /**
- * @class right click option in the grid 
+ * @class menu option action , position and event 
  */
 export class Menu {
 
@@ -12,8 +12,13 @@ export class Menu {
         this.menu = this.create();
         this.mousePosition();
         this.optionOnElement();
+        this.activeElement();
     }
 
+    /**
+     * unhauthorize basic behvior right click 
+     * @returns {void}
+     */
     unauthorizeRightClick()
     {
         window.addEventListener('contextmenu',(e) => e.preventDefault());
@@ -21,6 +26,7 @@ export class Menu {
 
     /**
      * create option menu
+     * @returns {HTMLElement} ul
      */
     create()
     {
@@ -49,6 +55,7 @@ export class Menu {
     /**
      * Html element to open
      * @param {HTMLElement} menu 
+     * @returns {void}
      */
     openOrClose(menu)
     {   
@@ -62,36 +69,41 @@ export class Menu {
 
     /**
      * option list of element option
+     * @returns {void}
      */
     optionList ()
     {
         return {
             fr : ['deplacer', 'supprimer', 'modifier la taille'], 
-            en  : ['move','remove','resize']
+            en  : ['move','remove','resize'],
+            className : {
+                drag : 'draggable',
+                resize : 'resize'
+            }
         }
     }
 
     /**
      * open or close option element when user click with multi event
+     * @returns {void}
      */
     optionOnElement()
     {
-        let itemList = document.querySelectorAll('#select-type option');
+        let optionList = document.querySelectorAll('#select-type option');
 
-        itemList.forEach( item => {
+        optionList.forEach( option => {
 
-            item.addEventListener('click', (e)=> {
+            option.addEventListener('click', (e)=> {
 
                 let list = document.querySelectorAll('#main-container .element');
                 
                 list.forEach( elt => {
-                    
+
                     elt.addEventListener('contextmenu',(e)=> {
                         
                         if(e.target.classList.contains('element'))
                         {
                             this.openOrClose(this.menu);
-                            e.target.classList.add('target')
                         }
                     });
                 });
@@ -100,23 +112,20 @@ export class Menu {
 
         window.addEventListener('contextmenu', (e)=>{
 
-            // && this.menu.classList.contains('element')
             if(!e.target.classList.contains('element') )
             {
                 this.menu.classList.add('hidden');
-
-           /*      
-                
-                let target = document.querySelector('.target');
-                console.log(target);
-                
-                if(target)
-                {
-                    console.log(e)
-                    e.classList.remove('target')
-                } */
             }
         });
+
+        window.addEventListener('click',(e)=>{
+            
+            if(e.target.classList.contains('element') && !this.menu.classList.contains('hidden'))
+            {
+                this.menu.classList.add('hidden');
+            }
+        });
+
 
         window.addEventListener('click', (e)=>{
 
@@ -125,11 +134,13 @@ export class Menu {
                 this.menu.classList.add('hidden')
             }
         });
+
     }
 
     /**
      * Listen current mouse position return them 
      * @returns {object} number position
+     * @returns {void}
      */
     mousePosition()
     {   
@@ -154,5 +165,52 @@ export class Menu {
     getPosition(element)
     {   
         return (element.getClientRects()[0])
+    }
+
+    /**
+     * element active or not when right click
+     * @returns {void}
+     */
+    activeElement()
+    {
+        window.addEventListener('contextmenu', (e)=>{
+
+            let target = e.target;
+            let targetClass = document.querySelector('.target');
+
+            if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
+            {   
+                target.classList.add('target');
+
+            }else if( !target.classList.contains('element') )
+            {
+                if(targetClass)
+                {
+                    targetClass.classList.remove('target');
+                }
+            }else {
+                target.classList.remove('target');
+            }
+        });
+
+        window.addEventListener('click', (e)=>{
+
+            let target = e.target;
+            let targetClass = document.querySelector('.target');
+
+            if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
+            {   
+                target.classList.add('target');
+
+            }else if( !target.classList.contains('element') )
+            {
+                if(targetClass)
+                {
+                    targetClass.classList.remove('target');
+                }
+            }else {
+                target.classList.remove('target');
+            }
+        });
     }
 }
