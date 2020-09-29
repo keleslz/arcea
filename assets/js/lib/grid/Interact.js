@@ -93,7 +93,7 @@ export class Interact {
 
             // minimum size
             interact.modifiers.restrictSize({
-                min: { width: 35, height: 35 }
+                min: { width: 20, height: 20 }
             })
         ],
 

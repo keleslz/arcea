@@ -51,6 +51,19 @@
   font-weight: bold;
 }
 
+.target {
+  box-shadow: 0 0 10px #ccc;
+}
+
+.resize {
+  border: 1px solid #24809c;
+}
+
+.draggable {
+  background-color: rgba(211, 211, 211, 0.4);
+  color: rgba(150, 150, 150, 0.9);
+}
+
 main {
   position: absolute;
   top: 8px;
@@ -104,6 +117,7 @@ nav {
   border: 1px solid #ccc;
   border-radius: 10px;
   height: 98vh;
+  box-shadow: 2px 0px 10px #aaa;
   padding: 0 5px 0 5px;
 }
 nav ul {
@@ -122,6 +136,28 @@ nav ul .head {
   background-color: #ccc;
   color: #333;
   text-align: center;
+}
+nav #color-menu {
+  width: 60%;
+  background-color: #eee;
+  box-shadow: 2px 4px 5px #aaa;
+  height: 100px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: auto;
+}
+nav #color-menu #color-label {
+  text-align: center;
+  color: #666;
+}
+nav #color-menu #color-palette {
+  width: auto;
+}
+nav #color-menu #color-hexa {
+  width: auto;
 }
 
 body {
@@ -150,9 +186,6 @@ body textarea {
 }
 body .hidden {
   display: none !important;
-}
-body .target {
-  box-shadow: 0 0 10px #ccc !important;
 }
 
 /*# sourceMappingURL=app.css.map */
