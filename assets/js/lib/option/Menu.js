@@ -152,8 +152,8 @@ export class Menu {
             let y  = e.clientY - this.nav.clientTop;
             let menu = document.querySelector('#option-menu'); 
             
-            menu.style.top = y + 'px';
-            menu.style.left = x + 'px';
+            menu.style.top = (y - 10) +  'px';
+            menu.style.left = (x - 21) +  'px';
         })
     }
 

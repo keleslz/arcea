@@ -108,7 +108,7 @@ export class Action extends Menu
     }
 
     /**
-     * Remove all action
+     * Remove all HTML class in on target
      * @param {HTMLElement} target
      */
     removeAll(target)
