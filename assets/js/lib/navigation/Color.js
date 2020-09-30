@@ -3,24 +3,12 @@ export class ColorBoard
     constructor()
     {
         this.colorBoard = document.querySelector('#color-menu');
-        this.prevent()
         this.action();
 
     }
 
-    prevent()
-    {
-        window.addEventListener('click', (e)=> {
-
-            if(this.colorBoard)
-            {
-                e.preventDefault();
-            }
-        })
-    }
-
     /**
-     * open colorboard
+     * Open or close colorboard
      */
     action()
     {   
@@ -34,7 +22,7 @@ export class ColorBoard
 
             if(elements)
             {   
-               this.open(heightMax);
+                this.open(heightMax);
             }else{
     
                 this.close(heightMin);
@@ -42,6 +30,10 @@ export class ColorBoard
         })
     }
 
+    /**
+     * Open action
+     * @param {Number} heightMax height max for colorboard
+     */
     open(heightMax)
     {
         this.colorBoard.style.height = heightMax + 'px';
@@ -65,6 +57,10 @@ export class ColorBoard
         }, 300);
     }
 
+    /**
+     * Close action  
+     * @param {Number} heightMin height min for colorboard
+     */
     close(heightMin)
     {
         if(this.colorBoard.offsetHeight > heightMin)
