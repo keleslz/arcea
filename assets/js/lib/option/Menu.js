@@ -1,5 +1,5 @@
 /**
- * @class menu option action , position and event 
+ * @class Menu is options action , position and event 
  */
 export class Menu {
 
@@ -74,11 +74,12 @@ export class Menu {
     optionList ()
     {
         return {
-            fr : ['deplacer', 'supprimer', 'modifier la taille'], 
-            en  : ['move','remove','resize'],
+            fr : ['deplacer', 'supprimer', 'modifier la taille','editer'], 
+            en  : ['move','remove','resize','edition'],
             className : {
                 drag : 'draggable',
-                resize : 'resize'
+                resize : 'resize',
+                edit : 'edit'
             }
         }
     }
@@ -152,8 +153,8 @@ export class Menu {
             let y  = e.clientY - this.nav.clientTop;
             let menu = document.querySelector('#option-menu'); 
             
-            menu.style.top = y + 'px';
-            menu.style.left = x + 'px';
+            menu.style.top = (y - 10) +  'px';
+            menu.style.left = (x - 21) +  'px';
         })
     }
 

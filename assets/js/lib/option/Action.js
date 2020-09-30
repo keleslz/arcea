@@ -73,7 +73,17 @@ export class Action extends Menu
                 classTargetElement.classList.add(this.options.resize);
             }
         }
-    }
+
+        // EDIT className
+        if(target.innerHTML === 'editer' )
+        {   
+            if(classTargetElement)
+            {
+                this.stopEvent(classTargetElement, this.options.edit);
+                classTargetElement.classList.add(this.options.edit);
+            }
+        }
+}
     
     /**
      * Stop current action
@@ -108,7 +118,7 @@ export class Action extends Menu
     }
 
     /**
-     * Remove all action
+     * Remove all HTML class in on target
      * @param {HTMLElement} target
      */
     removeAll(target)

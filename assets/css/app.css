@@ -51,6 +51,15 @@
   font-weight: bold;
 }
 
+.target {
+  box-shadow: 0 0 10px #ccc;
+}
+
+.draggable {
+  background-color: rgba(211, 211, 211, 0.4);
+  color: rgba(150, 150, 150, 0.9);
+}
+
 main {
   position: absolute;
   top: 8px;
@@ -61,7 +70,7 @@ main {
   margin-left: 5px;
   overflow: hidden;
 }
-main .draggable {
+main .draggable, main .resize, main .target {
   touch-action: none;
   user-select: none;
 }
@@ -104,6 +113,7 @@ nav {
   border: 1px solid #ccc;
   border-radius: 10px;
   height: 98vh;
+  box-shadow: 2px 0px 10px #aaa;
   padding: 0 5px 0 5px;
 }
 nav ul {
@@ -122,6 +132,28 @@ nav ul .head {
   background-color: #ccc;
   color: #333;
   text-align: center;
+}
+nav #color-menu {
+  width: 60%;
+  background-color: #eee;
+  box-shadow: 2px 4px 5px #aaa;
+  height: 20px;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: auto;
+}
+nav #color-menu #color-label {
+  text-align: center;
+  color: #666;
+}
+nav #color-menu #color-palette {
+  width: auto;
+}
+nav #color-menu #color-hexa {
+  width: auto;
 }
 
 body {
@@ -150,22 +182,6 @@ body textarea {
 }
 body .hidden {
   display: none !important;
-}
-body .resize-drag {
-  width: 120px;
-  border-radius: 8px;
-  padding: 20px;
-  margin: 1rem;
-  background-color: #29e;
-  color: white;
-  font-size: 20px;
-  font-family: sans-serif;
-  touch-action: none;
-  /* This makes things *much* easier */
-  box-sizing: border-box;
-}
-body .target {
-  box-shadow: 0 0 10px #ccc !important;
 }
 
 /*# sourceMappingURL=app.css.map */

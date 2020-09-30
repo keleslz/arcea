@@ -12,12 +12,26 @@ import '../css/app.css';
 // import $ from 'jquery';
 
 
+import { ColorBoard } from './lib/navigation/Color.js';
+
 import { Grid } from './lib/grid/Grid.js';
-import { Element } from './lib/element/Element.js';
 import { Interact } from './lib/grid/Interact.js';
+
+import { Element } from './lib/element/Element.js';
+import { Style } from './lib/element/Style.js';
+
 import { Action } from './lib/option/Action.js';
 
+//MENU
+new ColorBoard();
+
+//GRID
 new Grid();
-new Element();
 new Interact();
+
+//ELEMENT
+new Element();
+new Style();
+
+//Option
 new Action();

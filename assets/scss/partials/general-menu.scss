@@ -5,8 +5,8 @@ nav {
     border: 1px solid #ccc;
     border-radius: 10px;
     height: 98vh ;
+    box-shadow: 2px 0px 10px #aaa ;
     padding: 0 5px 0 5px;
-
 
     ul {
         
@@ -24,10 +24,37 @@ nav {
         }
         
         .head{
-
             background-color:#ccc;
             color:#333;
             text-align: center;
         }
     }
+
+    #color-menu{
+
+        width: 60%;
+        background-color: #eee;
+        box-shadow: 2px 4px 5px #aaa ;
+        height: 20px;
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        border-radius:10px;
+        margin: auto;
+
+        #color-label{
+            text-align: center;
+            color: #666;
+        }
+
+        #color-palette {
+            width: auto;
+        }
+    
+        #color-hexa {
+            width: auto;
+        }
+    }
+
 }
