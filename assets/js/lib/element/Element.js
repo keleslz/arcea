@@ -1,3 +1,5 @@
+import { elementType } from "prop-types";
+
 /**
  * @class create html element
  */
@@ -10,6 +12,7 @@ export class Element {
         this.container = document.querySelector('#main-container')
         this.listType  = document.querySelector('#select-type');
         this.create();
+        this.focus();
     }
 
     /**
@@ -18,14 +21,7 @@ export class Element {
      */
     center(element) 
     {   
-        let posContainer = this.getPosition(this.container);
-        let leftContainer = posContainer.left;
-        let heightContainer = posContainer.height;
-
         element.style.position = 'absolute';
-        // element.style.top = heightContainer / 2 + 'px';
-        // element.style.left = leftContainer +  'px';
-
         element.textContent = 'Nouvel element';
     }
 
@@ -58,5 +54,38 @@ export class Element {
     getPosition(element)
     {
         return (element.getClientRects()[0])
+    }
+
+    /**
+     * Add focus to all html element in the grid
+     */
+    focus()
+    {
+        window.addEventListener('click', ()=>{
+            
+            let elements = document.querySelectorAll('.element');
+
+            if(elements.length > 0)
+            {
+                elements.forEach( element => {
+
+                    element.addEventListener('focus', (e)=>{
+                        
+                        if(e.target.classList.contains('element'))
+                        {
+                            e.target.style.border ='1px solid #246c9c';
+                        }   
+                    });
+
+                    element.addEventListener('blur', (e)=>{
+                        
+                        if(e.target.classList.contains('element'))
+                        {
+                            e.target.style.border = '';
+                        }   
+                    });  
+                });
+            }
+        })
     }
 }

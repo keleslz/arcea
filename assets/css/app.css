@@ -55,10 +55,6 @@
   box-shadow: 0 0 10px #ccc;
 }
 
-.resize {
-  border: 1px solid #24809c;
-}
-
 .draggable {
   background-color: rgba(211, 211, 211, 0.4);
   color: rgba(150, 150, 150, 0.9);
@@ -141,7 +137,7 @@ nav #color-menu {
   width: 60%;
   background-color: #eee;
   box-shadow: 2px 4px 5px #aaa;
-  height: 100px;
+  height: 20px;
   padding: 20px;
   display: flex;
   justify-content: space-between;
