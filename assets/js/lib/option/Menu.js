@@ -159,8 +159,6 @@ export class Menu {
 
         if(targets.length > 0)
         {
-            console.log(targets);
-
             targets.forEach( t => {
 
                 t.classList.remove('target')

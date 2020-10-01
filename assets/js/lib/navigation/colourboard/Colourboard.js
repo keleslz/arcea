@@ -1,10 +1,11 @@
-export class ColorBoard
+export class Colourboard
 {
     constructor()
-    {
+    {   
         this.colorBoard = document.querySelector('#color-menu');
+        this.heightMax = 150;
+        this.heightMin = 20;
         this.action();
-
     }
 
     /**
@@ -17,8 +18,8 @@ export class ColorBoard
             let elements = document.querySelector('.edit');
 
             this.colorBoard.style.transition = '.2s ease-in .1s';
-            const heightMax  = 100;
-            const heightMin  = 20;
+            const heightMax  = this.heightMax;
+            const heightMin  = this.heightMin ;
 
             if(elements)
             {   
@@ -37,8 +38,6 @@ export class ColorBoard
     open(heightMax)
     {
         this.colorBoard.style.height = heightMax + 'px';
-
-        console.log(this.colorBoard.offsetHeight);
 
         setTimeout(() => {
             

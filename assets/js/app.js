@@ -12,18 +12,28 @@ import '../css/app.css';
 // import $ from 'jquery';
 
 
-import { ColorBoard } from './lib/navigation/Color.js';
+import { Nav } from './lib/navigation/init/Nav.js';
+import { MenuSelectList } from './lib/navigation/init/MenuSelectList.js';
+import { MenuColourboard } from './lib/navigation/init/MenuColourboard.js';
+
+import { Colourboard } from './lib/navigation/colourboard/Colourboard.js';
+import { Style } from './lib/navigation/colourboard/Style.js';
 
 import { Grid } from './lib/grid/Grid.js';
 import { Interact } from './lib/grid/Interact.js';
 
 import { Element } from './lib/element/Element.js';
-import { Style } from './lib/element/Style.js';
 
 import { Action } from './lib/option/Action.js';
 
-//MENU
-new ColorBoard();
+
+//Initialization
+new Nav();
+new MenuColourboard();
+new MenuSelectList();
+
+//NAVIGATION
+new Colourboard();
 
 //GRID
 new Grid();

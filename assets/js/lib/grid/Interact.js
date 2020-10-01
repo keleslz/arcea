@@ -80,7 +80,6 @@ export class Interact {
                 x += event.dx;
                 y += event.dy;
                 
-                // console.log(event.deltaRect);
                 target.style.width = x + 'px)';
                 target.style.height = y + 'px)';
             }
