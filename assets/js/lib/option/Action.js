@@ -30,7 +30,6 @@ export class Action extends Menu
 
                     let target = e.target;
                     let classTargetElement = document.querySelector('.target');
-
                     this.possible(target, classTargetElement);
                 })
             });
@@ -83,7 +82,7 @@ export class Action extends Menu
                 classTargetElement.classList.add(this.options.edit);
             }
         }
-}
+    }
     
     /**
      * Stop current action

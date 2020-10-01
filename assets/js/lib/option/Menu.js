@@ -62,9 +62,9 @@ export class Menu {
         if(menu.classList.contains('hidden'))
         {   
             menu.classList.remove('hidden');
-        }else{
+        } /* else {
             menu.classList.add('hidden');
-        }
+        } */
     }
 
     /**
@@ -85,7 +85,7 @@ export class Menu {
     }
 
     /**
-     * open or close option element when user click with multi event
+     * open or close option element list when user click on 
      * @returns {void}
      */
     optionOnElement()
@@ -104,6 +104,7 @@ export class Menu {
                         
                         if(e.target.classList.contains('element'))
                         {
+                            this.disableAll();
                             this.openOrClose(this.menu);
                         }
                     });
@@ -111,10 +112,20 @@ export class Menu {
             })
         });
 
+        this.close();
+    }
+
+    /**
+     * Close menu 
+     */
+    close()
+    {   
+
         window.addEventListener('contextmenu', (e)=>{
 
-            if(!e.target.classList.contains('element') )
+            if(!e.target.classList.contains('element') && !this.menu.classList.contains('hidden'))
             {
+                this.disableAll();
                 this.menu.classList.add('hidden');
             }
         });
@@ -123,19 +134,36 @@ export class Menu {
             
             if(e.target.classList.contains('element') && !this.menu.classList.contains('hidden'))
             {
+                this.disableAll();
                 this.menu.classList.add('hidden');
             }
         });
-
 
         window.addEventListener('click', (e)=>{
 
             if(!e.target.classList.contains('element') )
             {
-                this.menu.classList.add('hidden')
+                this.disableAll();
+                this.menu.classList.add('hidden');
             }
         });
+    }
 
+    /**
+     * Disable all elements which contains '.target' for to keep once 
+     * '.target' at time
+     */
+    disableAll()
+    {
+        let targets = document.querySelectorAll('.target');
+
+        if(targets.length > 0)
+        {
+            targets.forEach( t => {
+
+                t.classList.remove('target')
+            });
+        }
     }
 
     /**
@@ -169,7 +197,7 @@ export class Menu {
     }
 
     /**
-     * element active or not when right click
+     * '.target' element active or not when right click
      * @returns {void}
      */
     activeElement()
@@ -178,12 +206,13 @@ export class Menu {
 
             let target = e.target;
             let targetClass = document.querySelector('.target');
-
+            
             if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
             {   
                 target.classList.add('target');
 
-            }else if( !target.classList.contains('element') )
+            }
+            else if( !target.classList.contains('element') )
             {
                 if(targetClass)
                 {
@@ -198,8 +227,8 @@ export class Menu {
 
             let target = e.target;
             let targetClass = document.querySelector('.target');
-
-            if( target.classList.contains('element') && !this.menu.classList.contains('hidden') )
+            
+            if( target.classList.contains('element') )
             {   
                 target.classList.add('target');
 

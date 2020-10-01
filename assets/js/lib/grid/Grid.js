@@ -5,13 +5,23 @@ export class Grid
 {
     constructor()
     {
+        this.container = document.querySelector('.container');
+        this.createMain();
         this.main = document.querySelector('.container main')
         this.lineSize = 10; 
         this.mainSize = this.size(this.main);
-        this.elementContainer()
+        this.elementContainer();
         this.create(this.mainSize);
     }
 
+    /**
+     * create main html element
+     */
+    createMain()
+    {
+        let main = document.createElement('main');
+        this.container.appendChild(main)
+    }
     /**
      * Main container size
      * @param {HTMLElement} element an HTML element
@@ -110,5 +120,4 @@ export class Grid
     {
         return (element.getClientRects()[0])
     }
-
 }
