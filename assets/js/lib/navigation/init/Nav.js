@@ -15,9 +15,6 @@ export class Nav
         nav.id = 'nav-sidebar';
         nav.classList.add('menu');
         nav.appendChild(menu);
-        container.insertBefore( nav,document.querySelector('main') );
+        container.appendChild(nav);
     }
 }
-/* {<nav id="nav-sidebar"class="menu">
-    <h2>Menu</h2>
-</nav> */

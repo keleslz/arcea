@@ -46,6 +46,7 @@ export class MenuColourboard
         colorHexa.classList.add('hidden');
 
         valid.innerHTML  ='Valider';
+        valid.id  ='valid';
         valid.classList.add('hidden');
         
         cancel.innerHTML = 'Annuler';

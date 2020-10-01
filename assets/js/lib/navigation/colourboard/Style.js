@@ -1,7 +1,7 @@
 import { Font } from "../font/Font";
 
 /**
- * Stylize HTML Element
+ * Stylize HTML Element thanks to the NAVBAR EDITOR
  */
 export class Style 
 {

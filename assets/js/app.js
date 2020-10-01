@@ -13,8 +13,9 @@ import '../css/app.css';
 
 
 import { Nav } from './lib/navigation/init/Nav.js';
-import { MenuSelectList } from './lib/navigation/init/MenuSelectList.js';
 import { MenuColourboard } from './lib/navigation/init/MenuColourboard.js';
+import { MenuListType } from './lib/navigation/init/MenuListType.js';
+import { MenuListSize } from './lib/navigation/init/MenuListSize.js';
 
 import { Colourboard } from './lib/navigation/colourboard/Colourboard.js';
 import { Style } from './lib/navigation/colourboard/Style.js';
@@ -30,7 +31,8 @@ import { Action } from './lib/option/Action.js';
 //Initialization
 new Nav();
 new MenuColourboard();
-new MenuSelectList();
+new MenuListType();
+new MenuListSize();
 
 //NAVIGATION
 new Colourboard();

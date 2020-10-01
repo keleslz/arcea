@@ -3,25 +3,12 @@ Start :
         2- yarn install
         3- yarn watch
 
-
-Class TType ajouter le menu avec js
+Ajouter un syteme de containers fluides qui pourrait contenir des element HTML
 
 Prochainement : 
 
 
-    REACT JS : 
- 
-        - Generation de mini-carré le nombre se fixera par rapoort a la hauteur et la largeur du plus grand 
-        ecran pour la gestion du drag & drop aimant.
-        Losqu'un élement est placé on lui attribue une zone pour le responsive.
-        - Generation d'un element HTML lors de la selection d'option.
-        - Redimmensionnement de chaque element manuellement.
-        - Possibilité de place un element plus en avant qu'un autre avec
-        un systeme de z-index .
-
-        taille ecran : 
-
-            - s : 540px 	m : 720px 	l : 960px 	xl : 1140px
+    - s : 540px 	m : 720px 	l : 960px 	xl : 1140px
 
 
 
