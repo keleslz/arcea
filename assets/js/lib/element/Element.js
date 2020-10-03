@@ -36,7 +36,7 @@ export class Element {
                 
                 if(e.target.value !== '' )
                 {
-                    let element = document.createElement('input');
+                    let element = document.createElement('textarea');
                     element.classList.add('element' , e.target.value);
                     this.container.appendChild(element);
                     element.value = 'Nouveau texte';

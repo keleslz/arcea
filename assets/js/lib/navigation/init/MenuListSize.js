@@ -30,7 +30,7 @@ export class MenuListSize
      */
     size()
     {
-        let sizes = [];
+        let sizes = ['Taille'];
         
         for (let i = 0; i <  40 ; i++) {
 
@@ -58,10 +58,17 @@ export class MenuListSize
      */
     apply(sizes)
     {
-        sizes.forEach( size => {
+        for (let i = 0; i < sizes.length; i++) {
+            const size = sizes[i];
 
-            this.createOption(size);
-        });
+            if(i === 0)
+            {
+                this.createOption('Taille');
+            }else{
+
+                this.createOption(size);
+            }
+        }
     }
 
 }

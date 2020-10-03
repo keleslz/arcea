@@ -6,6 +6,7 @@ export class Font{
         this.paletteInput = document.querySelector('#color-hexa');
         this.editSize = document.querySelector('#edit-size');
         this.color();
+        this.size();
     }
 
     /**
@@ -19,7 +20,7 @@ export class Font{
             
             if(edit)
             {   
-                this.events(edit);
+                this.colorEvent(edit);
             }else{
                 this.paletteColor.value = '#000000';
                 this.paletteInput.placeholder = '#000000'
@@ -27,18 +28,24 @@ export class Font{
         })
     }
 
+    /**
+     * Set a size for an html element
+     */
     size() {
-        window.addEventListener('click', ()=>{
+
+        this.editSize.children.forEach( size => {
             
-            let edit = document.querySelector('.edit');
+            size.addEventListener('click', (e)=>{
             
-            if(edit)
-            {   
-                array.forEach(element => {
-                    
-                });
-            }
-        })
+                let edit = document.querySelector('.edit');
+                
+                if(edit)
+                {   
+                    edit.style.fontSize = e.target.value + 'px';
+                }
+            })
+        });
+        
     }
 
     /**

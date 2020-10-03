@@ -21,6 +21,7 @@ import { Colourboard } from './lib/navigation/colourboard/Colourboard.js';
 import { Style } from './lib/navigation/colourboard/Style.js';
 
 import { Grid } from './lib/grid/Grid.js';
+import { Update } from './lib/grid/Update.js';
 import { Interact } from './lib/grid/Interact.js';
 
 import { Element } from './lib/element/Element.js';
@@ -38,7 +39,7 @@ new MenuListSize();
 new Colourboard();
 
 //GRID
-new Grid();
+new Update();
 new Interact();
 
 //ELEMENT

@@ -21,13 +21,17 @@ main {
         .element {
             
             z-index: 2;
-            border: 1px solid #ccc;
             border-radius : 2px;
+            border: none;
             left: calc(50% - 112.5px);
             top: 50%;
+            overflow: hidden;
+            resize: unset;
             
             &:hover {
                 cursor: pointer;
+                border: 1px solid #ccc;
+
             }
         }
     }
