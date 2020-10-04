@@ -27,12 +27,18 @@ main {
             top: 50%;
             overflow: hidden;
             resize: unset;
+            background-color: unset;
             
             &:hover {
                 cursor: pointer;
                 border: 1px solid #ccc;
-
             }
+        }
+
+        .box {
+            /* 6px is border of 'element-option/.dropzone' */
+
+            min-width: 10%!important;
         }
     }
 

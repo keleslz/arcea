@@ -8,7 +8,7 @@ use Symfony\Component\Routing\Annotation\Route;
 class EditorController extends AbstractController
 {
     /**
-     * @Route("/editor", name="editor")
+     * @Route("/", name="editor")
      */
     public function index()
     {

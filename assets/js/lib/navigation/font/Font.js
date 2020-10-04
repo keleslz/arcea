@@ -5,8 +5,12 @@ export class Font{
         this.paletteColor = document.querySelector('#color-palette');
         this.paletteInput = document.querySelector('#color-hexa');
         this.editSize = document.querySelector('#edit-size');
+        this.validButton = document.querySelector('#valid');
+        this.cancelButton = document.querySelector('#cancel');
         this.color();
         this.size();
+        this.valid();
+        this.cancel();
     }
 
     /**
@@ -73,7 +77,6 @@ export class Font{
             {
                 let color = this.paletteColor.value = target.value;
                 edit.style.color = color;
-
             }
         });
     }
@@ -106,5 +109,25 @@ export class Font{
 
             }
         });
+    }
+
+    valid()
+    {
+
+    }
+
+    cancel()
+    {
+        this.cancelButton.addEventListener('click', (e)=>{
+            
+            let edits = document.querySelectorAll('.edit')
+
+            if(edits.length > 0 )
+            {
+                edits.forEach( edit => {
+                    edit.classList.remove('.edit')
+                });
+            }
+        })
     }
 }

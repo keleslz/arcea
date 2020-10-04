@@ -1,5 +1,8 @@
 import { Grid } from "./Grid";
 
+/**
+ * Update Grid when window's resizing
+ */
 export class Update extends Grid {
     
     constructor()

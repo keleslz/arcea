@@ -41,7 +41,7 @@ export class MenuListType
         this.insert(options.titles, 'Titre');
         this.insert(options.blocks, 'Block');
         this.insert(options.others, 'Inline');
-        this.insert(options.containers, 'Conteneur');
+        this.insert(options.containers, 'Box');
     }
 
     /**
@@ -69,9 +69,11 @@ export class MenuListType
         if(name === '')
         {   
             option.classList.add('head');
+            option.id = headTranslate;
             option.innerHTML = headTranslate;
                 
         }else{
+            option.id = option.value;
             option.innerHTML = name;
         }
     }
@@ -86,8 +88,8 @@ export class MenuListType
             titles : ['','h1','h2','h3','h4','h5','h6'],
             blocks : ['','footer','header','nav','img','address','article','blockquote','details','dialog','dd','div','fieldset','dt','ul','ol','li','main','p','pre','section','table'],
             others : ['','span','em','strong','a','q','small','textarea','label','input','select'],
-            containers : ['', 'container'],
+            containers : ['', 'box-100', 'box-75', 'box-50' ]
             /* Add key */
         } 
-    }   
+    }
 }

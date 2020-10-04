@@ -1,4 +1,4 @@
-# cms
+# Arcea
   Manage content system
 
     Objectif : 
@@ -22,3 +22,16 @@
       3. symfony composer require twig/twig
       4. yan install --> yarn watch 
       5. sass --watch assets/scss/app.scss assets/css/app.css
+
+# Doc
+
+  #JS
+
+  Dossiers : 
+  
+  - element
+  - grid
+  - navigation
+  - option
+
+  

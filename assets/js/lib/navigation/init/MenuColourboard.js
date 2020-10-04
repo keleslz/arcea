@@ -50,6 +50,7 @@ export class MenuColourboard
         valid.classList.add('hidden');
         
         cancel.innerHTML = 'Annuler';
+        cancel.id  ='cancel';
         cancel.classList.add('hidden');
     }
 }

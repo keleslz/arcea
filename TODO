@@ -11,5 +11,7 @@ Prochainement :
     - s : 540px 	m : 720px 	l : 960px 	xl : 1140px
 
 
+BUG Fix : 
 
+        - class '.draggable' evenement 'contextmenu' ne s'enleve que lorsqu'on lache le click droit sur ce meme element
     

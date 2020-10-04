@@ -1,5 +1,3 @@
-import { elementType } from "prop-types";
-
 /**
  * @class create html element
  */
@@ -22,7 +20,6 @@ export class Element {
     center(element) 
     {   
         element.style.position = 'absolute';
-        element.textContent = 'Nouvel element';
     }
 
     /**
@@ -34,16 +31,43 @@ export class Element {
 
             child.addEventListener('click', (e) => {
                 
-                if(e.target.value !== '' )
-                {
-                    let element = document.createElement('textarea');
-                    element.classList.add('element' , e.target.value);
+                let target = e.target;
+
+                if(target.value !== '' )
+                {   
+                    let element = '';
+
+                    if( target.value.includes('box'))
+                    {   
+                        element = document.createElement('div');
+                        element.classList.add('element' ,'box', target.value, 'dropzone');
+                        this.setBoxStyle(element);
+                        
+                    }else{
+                        
+                        element = document.createElement('textarea');
+                        element.classList.add('element' , target.value);
+                        element.value = 'Nouveau texte';
+                    }
+
                     this.container.appendChild(element);
-                    element.value = 'Nouveau texte';
                     this.center(element);   
                 }
             })   
         });
+    }
+
+    /**
+     * Set width propertie for a box element thank classList
+     * @param {HTMLElement} element a box element
+     */
+    setBoxStyle(element)
+    {   
+        let width = element.classList[2].replace('box-', '');
+
+        element.style.width = width + '%';
+        element.style.height = '100px';
+        element.style.left = 0; 
     }
 
     /**
