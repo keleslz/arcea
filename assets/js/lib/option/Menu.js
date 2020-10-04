@@ -16,7 +16,7 @@ export class Menu {
     }
 
     /**
-     * unhauthorize basic behvior right click 
+     * unhauthorize basic behavior right click 
      * @returns {void}
      */
     unauthorizeRightClick()
@@ -62,9 +62,7 @@ export class Menu {
         if(menu.classList.contains('hidden'))
         {   
             menu.classList.remove('hidden');
-        } /* else {
-            menu.classList.add('hidden');
-        } */
+        }
     }
 
     /**

@@ -40,7 +40,7 @@ export class Element {
                     if( target.value.includes('box'))
                     {   
                         element = document.createElement('div');
-                        element.classList.add('element' ,'box', target.value);
+                        element.classList.add('element' ,'box', target.value, 'dropzone');
                         this.setBoxStyle(element);
                         
                     }else{
@@ -67,6 +67,7 @@ export class Element {
 
         element.style.width = width + '%';
         element.style.height = '100px';
+        element.style.left = 0; 
     }
 
     /**

@@ -27,6 +27,7 @@ main {
             top: 50%;
             overflow: hidden;
             resize: unset;
+            background-color: unset;
             
             &:hover {
                 cursor: pointer;
@@ -35,11 +36,10 @@ main {
         }
 
         .box {
-            height: 100px!important;
-            min-width: 10%!important;
-            background-color: #f00!important;
-        }
+            /* 6px is border of 'element-option/.dropzone' */
 
+            min-width: 10%!important;
+        }
     }
 
     #grid-container {

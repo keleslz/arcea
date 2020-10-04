@@ -5,6 +5,8 @@ export class Colourboard
         this.colorBoard = document.querySelector('#color-menu');
         this.heightMax = 150;
         this.heightMin = 20;
+        this.valid = document.querySelector('#valid');
+        this.cancel = document.querySelector('#cancel');
         this.action();
     }
 
@@ -15,13 +17,13 @@ export class Colourboard
     {   
         window.addEventListener('click', () => {
 
-            let elements = document.querySelector('.edit');
-
+            let element = document.querySelector('.edit');
+            
             this.colorBoard.style.transition = '.2s ease-in .1s';
             const heightMax  = this.heightMax;
             const heightMin  = this.heightMin ;
 
-            if(elements)
+            if(element)
             {   
                 this.open(heightMax);
             }else{
@@ -77,4 +79,5 @@ export class Colourboard
             this.colorBoard.style.height = heightMin + 'px';
         }
     }
+
 }
