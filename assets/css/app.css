@@ -90,6 +90,11 @@ main #main-container .element:hover {
   cursor: pointer;
   border: 1px solid #ccc;
 }
+main #main-container .box {
+  text-decoration: double !important;
+  height: 100px;
+  background-color: #fff;
+}
 main #grid-container {
   height: 100%;
   border: 1px solid #ccc;

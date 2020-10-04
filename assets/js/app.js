@@ -20,11 +20,11 @@ import { MenuListSize } from './lib/navigation/init/MenuListSize.js';
 import { Colourboard } from './lib/navigation/colourboard/Colourboard.js';
 import { Style } from './lib/navigation/colourboard/Style.js';
 
-import { Grid } from './lib/grid/Grid.js';
 import { Update } from './lib/grid/Update.js';
 import { Interact } from './lib/grid/Interact.js';
 
 import { Element } from './lib/element/Element.js';
+import { Box } from './lib/element/box/Box.js';
 
 import { Action } from './lib/option/Action.js';
 
@@ -44,7 +44,9 @@ new Interact();
 
 //ELEMENT
 new Element();
+new Box();
 new Style();
 
 //Option
 new Action();
+

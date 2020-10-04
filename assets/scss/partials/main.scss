@@ -31,9 +31,15 @@ main {
             &:hover {
                 cursor: pointer;
                 border: 1px solid #ccc;
-
             }
         }
+
+        .box {
+            height: 100px!important;
+            min-width: 10%!important;
+            background-color: #f00!important;
+        }
+
     }
 
     #grid-container {
